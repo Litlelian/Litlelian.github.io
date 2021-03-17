@@ -1,24 +1,155 @@
 body {
   position: absolute;
+  width: 100%;
   font: normal normal normal 24px/48px Segoe UI;
   color: #707070;
+  overflow-x: hidden;
+  margin: 0px;
 }
 
-#logo,#adopt,#cooperation,#about,#contact,#question {
+p {
+  line-height: 2em;
+}
+
+#adopt,#cooperation,#duck2,#about,#contact,#question {
   padding-left: 140px;
   padding-right: 140px;
 }
 
-.navigation {
+#layout {
+  display: none;
   position: fixed;
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 10px #000000A6;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  opacity: 1;
+  top: 7%;
+  bottom: 7%;
+  left: 20%;
+  right: 20%;
+  z-index: 6;
+  padding: 40px 0px 40px 0px;
+  overflow-y: scroll;
+}
+
+#popup::-webkit-scrollbar {
+  display: none;
+}
+
+#popup img {
+  height: 45px;
+}
+
+#popup .bbold {
+  font: normal normal 600 48px/64px Segoe UI;
+  color: #689F38;
+  margin: 0px 0px 0px 65px;
+}
+
+#popup form {
+  margin: 0px 75px 0px 65px;
+}
+
+#popup .input {
+  margin-top: 40px;
+}
+
+#popup input[type="text"] {
+  width: 35%;
+  height: 72px;
+  padding: 14px 23px 14px 23px;
+  font: normal normal normal 34px/46px Segoe UI;
+  color: #707070;
+  border: 1px solid #707070;
+  border-radius: 5px;
+}
+
+#popup .input1 input[type="text"] {
+  margin-bottom: 40px;
+  margin-right: 70px; 
+}
+
+#popup input[type="radio"],input[type="checkbox"] {
+  width: 37px;
+  height: 37px;
+  margin-right: 9px;
+}
+
+#popup .checkbox1 label {
+  margin-right: 70px;
+}
+
+#popup label {
+  text-align: center;
+}
+
+#popup .checkbox {
   display: flex;
   align-items: center;
+  font: normal normal normal 34px/46px Segoe UI;
+}
+
+#popup .input2 input[type="text"] {
+  margin-right: 40px;
+}
+
+#popup .input2 .input3 {
+  margin-right: 70px;
+}
+
+#popup p {
   margin: 0px;
-  width: 1920px;
-  height: 150px;
+  color: #707070;
+}
+
+#popup .bold {
+  color: #404040;
+}
+
+#popup .button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#popup button {
+  font: normal normal bold 38px/51px Segoe UI;
+  color: #FFFFFF;
+  background: #689F38 0% 0% no-repeat padding-box;
+  border: 3px solid #4164223D;
+  border-radius: 5px;
+  padding: 2px 100px;
+}
+
+.flexbox1 {
+  position: fixed;
+  display: flex;
+  top: 0px;
+  left: 0px;
+  justify-content: space-between;
+  width: 100%;
   background: white;
   box-shadow: 0px 3px 6px #00000029;
-  padding-left: 140px;
+  align-items: center;
+  z-index: 4;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font: normal normal 600 24px/32px Segoe UI;
+  margin: 0px;
+  height: 150px;
   left: 0px;
   top: 0px;
 }
@@ -37,7 +168,7 @@ body {
 .nav2 {
   position: fixed;
   display: inline;
-  right: 140px;
+  right: 5%;
   bottom: 10%;
   width: 80px;
   height: 80px;
@@ -60,14 +191,14 @@ a {
   color: #707070;
 }
 
-#logo {
-  margin-top: 198px;
+a:hover {
+  color: #404040;
 }
 
 .join {
-  position: fixed;
-  top: 51px;
-  right: 140px;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 40px;
 }
 
 .join button{
@@ -88,9 +219,13 @@ a {
 }
 
 #contact {
-  height: 167px;
+  min-height: 167px;
   text-align: center;
   background: #404040 0% 0% no-repeat padding-box;
+}
+
+#contact .flexbox {
+  justify-content: center;
 }
 
 #contact .col,h3 {
@@ -98,18 +233,13 @@ a {
   text-align: left;
   margin-left: 10px;
   margin-right: 10px;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  vertical-align: middle;
 }
 
 #contact h3 {
   font: normal normal 600 34px/46px Segoe UI;
   margin-right: 121px;
-}
-
-#contact .col {
-  height: 167px;
 }
 
 #contact .pt {
@@ -121,36 +251,48 @@ a {
   margin: 0px 106px 48px 0px;
 }
 
+.flexbox {
+  display: flex;
+  align-items: center;
+}
+
 #adopt {
+  margin-top: 198px;
   margin-bottom: 60px;
+  text-align: center;
+}
+
+#adopt .flexbox2 {
+  max-width: 643px;
+  flex-shrink: 0;
+}
+
+#adopt .bold {
+  margin-bottom: 30px;
 }
 
 #adopt .col{
   vertical-align: middle;
   width: 313px;
-  margin: 0px;
 }
 
-#adopt .p1 {
-  width: 950px;
-  height: 466px;
+#adopt .p1 { 
   margin-right: 40px;
 }
 
 #adopt .p2 {
+  text-align: center;
   margin-top: 43px;
-  margin-left: 690px;
   margin-bottom: 30px;
 }
 
 #adopt .p3 {
-  width: 950px;
-  height: 464px;
   margin-left: 40px;
 }
 
 #adopt p {
   margin: 0px;
+  text-align: left;
 }
 
 .bold {
@@ -175,31 +317,54 @@ a {
 .col {
   display: inline-flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .col1 {
-  padding-right: 10px;
+  margin-right: 10px;
 }
 
 .duck {
+  display: flex;
   background-image: url("./fig/plant.png");
-  width: 1648px;
-  margin: 60px 140px 60px 140px;
+  background-repeat: space repeat;
+  margin: 0px 140px 60px 140px;
 }
 
-.duck img {
-  margin-left: 1613px;
+.duck #duck {
+  position: relative;
+  left: 97.7%;
+  z-index: -1;
+}
+
+.duck #duck3 {
+  position: relative;
+  left: 97.7%;
+  margin-left: -44px;
+  z-index: 1;
+  opacity: 0;
+}
+
+.duck2 {
+  position: relative;
+  background: url("./fig/duck2.png") no-repeat;
+  background-position: right; 
+  width: 81px;
+  height: 49px;
+  left: 97.7%;
+  z-index: -1;
+  opacity: 0;
 }
 
 #about {
+  text-align: center;
   background: #689F38 0% 0% no-repeat padding-box;
-  height: 503px;
   margin-bottom: 46px;
   padding-top: 49px;
+  padding-bottom: 40px;
 }
 
 #about p {
+  text-align: left;
   color: white;
   margin: 0px;
 }
@@ -211,13 +376,8 @@ a {
 }
 
 #about .col {
-  width: 978px;
-  height: 443px;
+  width: 60%;
   vertical-align: top;
-}
-
-#cooperation {
-  width: 1640px;
 }
 
 #cooperation .bold {
@@ -227,7 +387,7 @@ a {
 }
 
 #cooperation table {
-  width: 1640px;
+  width: 100%;
   height: 376px;
   margin-bottom: 27px;
 }
@@ -235,7 +395,7 @@ a {
 #cooperation thead {
   font: normal normal normal 34px/46px Segoe UI;
   display: table;
-  width: 1600px;
+  width: 100%;
   table-layout: fixed;
   padding-left: 20px;
 }
@@ -250,11 +410,12 @@ a {
 }
 
 #cooperation tbody tr {
-  background-image: url("./fig/tablebar.png");
+  background: url("./fig/tablebar.png") center center no-repeat;
+  background-size: cover;
   display: table;
   height: 64px;
   vertical-align: middle;
-  width: 1600px;
+  width: 100%;
   table-layout: fixed;
   box-shadow: 0px 3px 6px #00000029;
   margin: 0px 20px 15px 20px;
@@ -269,7 +430,6 @@ a {
 }
 
 #question {
-  width: 1640px;
   min-height: 669px;
   margin-top: 198px;
 }
@@ -280,20 +440,34 @@ a {
 }
 
 #question .q {
-  width: 1640px;
-  height: 72px;
+  width: 100%;
+  height: 75px;
   border: 1px solid #707070;
   border-radius: 10px;
   margin-top: 20px;
   padding-left: 30px;
+  padding-right: 30px;
+}
+
+#question .q2 {
+  position: relative;
+  z-index: 2;
+}
+
+#question .q3 {
+  position: relative;
+  z-index: 3;
 }
 
 #question .qt {
   font: normal normal 600 24px/32px Segoe UI;
   color: #404040;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 #question .anw {
   font: normal normal normal 24px/32px Segoe UI;
   opacity: 0;
+  margin-bottom: 24px;
 }

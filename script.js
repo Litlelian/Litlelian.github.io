@@ -18,6 +18,28 @@ $('#layout').click(function(){
   $('#pump2').transition('fly down')
 })
 
+$('#layout2').click(function(){ 
+  setTimeout(function(){
+    $('#layout2').css('display','none')
+    $('#thank').css('display','none')
+  },300)
+})
+
+$('#joinform').click(function(){
+  $('#pump3').transition('fly down')
+  setTimeout(function(){
+    $('#layout').css('display','none')
+    $('#popup').css('display','none')
+    $('#layout2').css('display','block')
+    $('#thank').css('display','block')
+  },400)
+  setTimeout(function(){ 
+    $('#layout2').css('display','none')
+    $('#thank').css('display','none') 
+  },3000)
+  $('#pump2').transition('fly down')
+})
+
 //duck
 $('#duck3').click(function(){
   $('.duck2').css('opacity','1')
